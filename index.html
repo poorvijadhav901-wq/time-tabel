@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>GATE + College Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">G</div><div><h1>GATE + College Planner</h1><p>Your weekly study dashboard</p></div></div>
+    <div class="today" id="todayLabel"></div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div><span class="eyebrow">STAY CONSISTENT • ONE DAY AT A TIME</span><h2>Plan your day.<br><em>Build your future.</em></h2>
+      <p>Follow your college routine, make steady GATE progress, and track every completed task.</p></div>
+      <div class="hero-stat"><span>Today's progress</span><strong id="todayPercent">0%</strong><div class="progress-track"><div id="todayBar" class="progress-fill"></div></div><small id="todayCount">0 of 0 tasks completed</small></div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card"><span class="summary-icon">✓</span><div><small>Weekly completion</small><strong id="weekPercent">0%</strong></div></article>
+      <article class="summary-card"><span class="summary-icon">📚</span><div><small>Tasks completed</small><strong id="completedCount">0</strong></div></article>
+      <article class="summary-card"><span class="summary-icon">🎯</span><div><small>Weekly subjects</small><strong>5 + ATAR</strong></div></article>
+    </section>
+
+    <section class="section">
+      <div class="section-heading"><div><span class="eyebrow">YOUR ROUTINE</span><h2>Weekly timetable</h2></div><button id="pdfBtn" class="pdf-button" type="button">↓ Download Progress PDF</button></div>
+      <nav class="day-tabs" id="dayTabs" aria-label="Choose day"></nav>
+      <div class="day-intro"><div><h3 id="dayTitle"></h3><p id="daySubtitle"></p></div><span class="day-progress" id="dayProgress">0%</span></div>
+      <div class="task-list" id="taskList"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading"><div><span class="eyebrow">SUBJECT FOCUS</span><h2>Weekly subject allocation</h2></div><span class="hint">College revision priorities</span></div>
+      <div class="table-wrap"><table><thead><tr><th>Day</th><th>College revision priority</th></tr></thead><tbody id="subjectTable"></tbody></table></div>
+    </section>
+
+    <section class="section two-column">
+      <div><div class="section-heading"><div><span class="eyebrow">MAKE IT YOURS</span><h2>Add a task</h2></div></div>
+        <form id="addTaskForm" class="add-form"><label>Day<select id="newDay"></select></label><label>Time<input id="newTime" placeholder="e.g. 7:00–7:30" required></label><label class="wide">Activity<input id="newActivity" placeholder="What do you want to work on?" required></label><button type="submit">＋ Add task</button></form>
+      </div>
+      <div><div class="section-heading"><div><span class="eyebrow">WEEKLY CHECK-IN</span><h2>Reflection notes</h2></div></div>
+        <textarea id="notes" placeholder="What went well this week? What should you improve next week?"></textarea><div class="save-note" id="saveStatus">Notes save automatically on this device.</div>
+      </div>
+    </section>
+    <footer>Consistency matters more than perfection. Adjust the plan when college work or personal commitments change.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
